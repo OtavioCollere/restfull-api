@@ -1,33 +1,41 @@
-import AppError from "@shared/http/errors/AppError";
-import { UserRepository } from "../typeorm/repositories/UsersRepository";
 import { getCustomRepository } from "typeorm";
+import AppError from "@shared/http/errors/AppError";
+import UsersRepository from "../typeorm/repositories/UsersRepository";
+import User from "../typeorm/entities/User";
+import { hash } from "bcryptjs";
 
-interface IRequest {
-    name : string,
-    email : string, 
-    password : string,
-    avatar : string
+
+interface IRequest
+{
+    name : string;
+    email : string;
+    password : string;
 }
 
-class CreateUserService
+class CreateUserService 
 {
-    public async execute({name, email, password, avatar} : IRequest)
-    {
-        
-        const userRepository = getCustomRepository(UserRepository);
-        const userExists = await userRepository.findByEmail(email);
 
-        if ( userExists )
+    public async execute( {name, email, password } : IRequest ) : Promise<User | undefined>
+    {
+        const userRepository = getCustomRepository(UsersRepository);
+        const emailExists = await userRepository.findByEmail(email);
+
+        if ( emailExists )
         {
-            throw new AppError('This email already exists!');
+            throw new AppError("Email address already used.");
         }
 
-        const user = userRepository.create({name, email, password, avatar});
+        const hashedPassword = await hash(password, 8);
 
-        await userRepository.save(user)
+        const user = userRepository.create({
+            name, 
+            email,
+            password : hashedPassword
+        })
 
+        await userRepository.save(user);
+        
         return user;
-
     }
 
 }

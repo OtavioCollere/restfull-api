@@ -1,18 +1,19 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, UpdateDateColumn } from "typeorm";
 
-@Entity('products')
-class Product 
+@Entity()
+class Product
 {
-    @PrimaryGeneratedColumn('uuid')
+
+    @Column()
     id : string
 
-    @Column('string')
+    @Column()
     name : string
 
-    @Column('decimal')
+    @Column()
     price : number
 
-    @Column('int')
+    @Column()
     quantity : number
 
     @CreateDateColumn()
@@ -20,6 +21,7 @@ class Product
 
     @UpdateDateColumn()
     updated_at : Date
+
 }
 
-export default Product;
+export default Product

@@ -1,36 +1,40 @@
-import { getCustomRepository } from "typeorm"
-import { ProductRepository } from "../typeorm/repositories/ProductsRepository"
+import { getCustomRepository } from "typeorm";
+import Product from "../typeorm/entities/Product";
+import ProductRepository from "../typeorm/repositories/ProductRepository";
 import AppError from "@shared/http/errors/AppError";
 
-interface IRequest {
-    name : string,
-    price : number,
-    quantity : number
+
+interface IRequest
+{
+    name : string;
+    price : number;
+    quantity : number;
 }
 
-class CreateProductService
+class CreateProductService 
 {
-    public async execute({name, price, quantity} : IRequest)
+
+    public async execute( {name, price, quantity} : IRequest ) : Promise<Product | undefined>
     {
-        const productsRepository = getCustomRepository(ProductRepository);
-        const productExists = await productsRepository.findByName(name);
+        const productRepository = getCustomRepository(ProductRepository);
+        const productExists = await productRepository.findByName(name);
 
         if (productExists)
         {
-            throw new AppError('There is already one product with this name!');
+            throw new AppError("There is already one product with this name");
         }
 
-        const product = productsRepository.create({
+        const product = productRepository.create({
             name,
             price,
             quantity
         })
 
-        await productsRepository.save(product);
-
+        await productRepository.save(product);
+        
         return product;
     }
-}
 
+}
 
 export default CreateProductService;
