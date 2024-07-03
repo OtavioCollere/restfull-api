@@ -1,43 +1,41 @@
 import { getCustomRepository } from "typeorm";
-import AppError from "@shared/http/errors/AppError";
-import UsersRepository from "../typeorm/repositories/UsersRepository";
-import User from "../typeorm/entities/User";
+import UserRepository from "../typeorm/repositories/UserRepository";
+import AppError from "@shared/errors/AppError";
 import { hash } from "bcryptjs";
+import authConfig from '@config/auth';
+import User from "../typeorm/entities/User";
 
-
-interface IRequest
+interface IRequest 
 {
-    name : string;
-    email : string;
-    password : string;
+    name : string,
+    email : string,
+    password : string
 }
 
-class CreateUserService 
+class CreateUserService
 {
-
-    public async execute( {name, email, password } : IRequest ) : Promise<User | undefined>
+    public async execute( {name, email, password} : IRequest ) : Promise<User>
     {
-        const userRepository = getCustomRepository(UsersRepository);
+        const userRepository = getCustomRepository(UserRepository);
         const emailExists = await userRepository.findByEmail(email);
 
-        if ( emailExists )
+        if (emailExists)
         {
-            throw new AppError("Email address already used.");
+            throw new AppError("Email já está em uso.");
         }
 
-        const hashedPassword = await hash(password, 8);
+        const hashedPassword = await hash(password, authConfig.jwt.salt);
 
         const user = userRepository.create({
             name, 
             email,
             password : hashedPassword
-        })
+        })        
 
         await userRepository.save(user);
-        
+
         return user;
     }
-
 }
 
 export default CreateUserService;
