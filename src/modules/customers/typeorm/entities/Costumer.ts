@@ -1,5 +1,6 @@
 import Anamnese from '@modules/anamnese/typeorm/entities/Anamnese';
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import Procedure from '@modules/procedures/typeorm/typeorm/entities/Procedure';
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('costumers')
 class Costumer
@@ -10,8 +11,11 @@ class Costumer
     @Column()
     name : string
 
-    @OneToOne( type => Anamnese,  costumer => Costumer )
-    anamnese : Anamnese
+    @OneToOne(type => Anamnese, anamnese => anamnese.costumer)
+    anamnese: Anamnese;
+
+    @OneToMany(type =>  Procedure, procedure => procedure.costumer)
+    procedures : Procedure[]
 
     @Column()
     email : string

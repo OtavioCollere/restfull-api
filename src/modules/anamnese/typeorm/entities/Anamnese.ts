@@ -105,9 +105,9 @@ class Anamnese
     @UpdateDateColumn()
     updated_at : Date
 
-    @OneToOne( type => Costumer, anamnese => Anamnese)
+    @OneToOne(type => Costumer, costumer => costumer.anamnese)
     @JoinColumn({ name: 'costumer_id' })
-    costumer : Costumer
+    costumer: Costumer;
 
 }
 

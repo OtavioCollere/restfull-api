@@ -1,21 +1,21 @@
 import {MigrationInterface, QueryRunner, TableColumn, TableForeignKey} from "typeorm";
 
-export class AddCostumerIdToAnamnese1720029498051 implements MigrationInterface {
+export class AddCostumerIdToProcedures1720095984999 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn(
-            'anamneses',
+            'procedures',
             new TableColumn({
-                name : 'costumer_id',
+                name : "costumer_id",
                 type : 'uuid',
                 isNullable : true
             })
         )
 
         await queryRunner.createForeignKey(
-            'anamneses',
+            'procedures', 
             new TableForeignKey({
-                name : 'AnamneseCostumer',
+                name : 'CostumerProcedures',
                 columnNames : ['costumer_id'],
                 referencedTableName : 'costumers',
                 referencedColumnNames : ['id'],
@@ -25,8 +25,8 @@ export class AddCostumerIdToAnamnese1720029498051 implements MigrationInterface 
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('anamneses','AnamneseCostumer');
-        await queryRunner.dropColumn('anamneses','costumer_id');   
+        await queryRunner.dropForeignKey('anamneses' ,'CostumerProcedures');
+        await queryRunner.dropColumn('anamneses', 'costumer_id')
     }
 
 }
