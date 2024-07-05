@@ -5,6 +5,7 @@
 ### Índice
 + 1.0 Tecnologias utilizadas
 + 2.0 Descrição do projeto
++ 3.0 Resumo do projeto
 + 3.0 Funcionalidades
 + 4.0 Pessoa Desenvolvedora
 
