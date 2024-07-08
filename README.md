@@ -20,19 +20,20 @@ Eu tive a ideia de iniciar este projeto para consolidar os conhecimentos adquiri
 
 A arquitetura do projeto é dividida em:
 
-Shared
-Modules (services, controllers, TypeORM repository & entities)
-Config
+- Shared
+- Modules (services, controllers, TypeORM repository & entities)
+- Config
+- 
 Este projeto aborda diversos conceitos importantes, incluindo:
 
-Criação de tokens JWT
-CRUD para todos os módulos de usuário
-Relações one-to-one e one-to-many
-Orientação a objetos
-Princípios SOLID
-Funções assíncronas
-Promises
-Interfaces, entre outros.
+- Criação de tokens JWT
+- CRUD para todos os módulos de usuário
+- Relações one-to-one e one-to-many
+- Orientação a objetos
+- Princípios SOLID
+- Funções assíncronas
+- Promises
+- Interfaces, entre outros.
 
 ### Versões do projeto
 * 1.0 CRUD de Usuários / Procedimentos / Anamneses / Clientes
