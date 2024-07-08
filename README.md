@@ -16,14 +16,16 @@
 * PostgreeSQL
 
 ### Descrição do projeto
-Eu tive a ideia de iniciar este projeto para consolidar os conhecimentos adquiridos no curso de API Restful do professor Jorge Aluizio de Azevedo. Minha irmã tem uma clínica de procedimentos e não possui um sistema para controle de procedimentos e usuários. Este projeto é desenvolvido com boas práticas e utiliza tecnologias como TypeScript, TypeORM, PostgreSQL, Node.js e Express.
+Eu estava fazendo o curso de API Restful do professor Jorge Aluizio de Azevedo, e encontrei uma oportunidade de consolidar os conhecimentos quando percebi que minha irmã precisava de um sistema para controle de procedimentos, faturamentos e clientes. Ela tem uma clínica de procedimentos e ainda utiliza muitos papéis para fazer os registros, oque é um grande problema visto que atualmente podemos ter todas as informações automatizadas e salvas em nuvem.
+
+Este projeto é desenvolvido com boas práticas e utiliza tecnologias como TypeScript, TypeORM, PostgreSQL, Node.js e Express.
 
 A arquitetura do projeto é dividida em:
 
 - Shared
 - Modules (services, controllers, TypeORM repository & entities)
 - Config
-- 
+  
 Este projeto aborda diversos conceitos importantes, incluindo:
 
 - Criação de tokens JWT
