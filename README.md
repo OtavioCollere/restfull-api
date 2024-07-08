@@ -29,7 +29,7 @@ A arquitetura do projeto é dividida em:
 Este projeto aborda diversos conceitos importantes, incluindo:
 
 - Criação de tokens JWT
-- CRUD para todos os módulos de usuário
+- CRUD para todos os módulos
 - Relações one-to-one e one-to-many
 - Orientação a objetos
 - Princípios SOLID
