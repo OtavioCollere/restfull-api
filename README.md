@@ -33,6 +33,8 @@ Este projeto aborda diversos conceitos importantes, incluindo:
 - Relações one-to-one e one-to-many
 - Orientação a objetos
 - Princípios SOLID
+- Clean architecture
+- Modular architecture
 - Funções assíncronas
 - Promises
 - Interfaces, entre outros.
