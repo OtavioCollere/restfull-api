@@ -41,6 +41,7 @@ Este projeto aborda diversos conceitos importantes, incluindo:
 
 ### Versões do projeto
 * 1.0 CRUD de Usuários / Procedimentos / Clientes
+* 2.0 CRUD atualizada com DESIGN PATTERNS
 
 ### Futuras atualizações
 - Sistema para controle de produtos em que a DRA usa em seus procedimentos ( Produtos em estoque / descontar quantidade que foi usada em um procedimento / calcular preços em produtos )
