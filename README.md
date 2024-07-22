@@ -40,7 +40,7 @@ Este projeto aborda diversos conceitos importantes, incluindo:
 - Interfaces, entre outros.
 
 ### Versões do projeto
-* 1.0 CRUD de Usuários / Procedimentos / Anamneses / Clientes
+* 1.0 CRUD de Usuários / Procedimentos / Clientes
 
 ### Futuras atualizações
 - Sistema para controle de produtos em que a DRA usa em seus procedimentos ( Produtos em estoque / descontar quantidade que foi usada em um procedimento / calcular preços em produtos )
