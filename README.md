@@ -47,7 +47,7 @@ Este projeto aborda diversos conceitos importantes, incluindo:
 - Sistema de agenda -> Calendário com as consultas dos pacientes
 - Usar Redis Cache
 - Testes automatizados 
-- Aplicar Design Patterns em toda aplicação ✅
+- Aplicar Design Patterns em toda aplicação ( Atuaizado em 22 Julho de 2024 ✅ )
 
 
   
