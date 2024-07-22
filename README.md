@@ -46,8 +46,8 @@ Este projeto aborda diversos conceitos importantes, incluindo:
 - Sistema para controle de produtos em que a DRA usa em seus procedimentos ( Produtos em estoque / descontar quantidade que foi usada em um procedimento / calcular preços em produtos )
 - Sistema de agenda -> Calendário com as consultas dos pacientes
 - Usar Redis Cache
-- Testes automatizados
-- Aplicar Design Patterns em toda aplicação
+- Testes automatizados 
+- Aplicar Design Patterns em toda aplicação ✅
 
 
   
